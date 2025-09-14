@@ -12,6 +12,7 @@
 		9F8C57802E5AC26B001803F2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8C577F2E5AC26B001803F2 /* RxCocoa */; };
 		9F8C57822E5AC26B001803F2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8C57812E5AC26B001803F2 /* RxRelay */; };
 		9F8C57842E5AC26B001803F2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8C57832E5AC26B001803F2 /* RxSwift */; };
+		9FA7F69F2E767D9A000BEF34 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA7F69E2E767D9A000BEF34 /* ObjectMapper */; };
 		9FD592532E6D21CB005E9CC9 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD592522E6D21CB005E9CC9 /* CombineMoya */; };
 		9FD592552E6D21CB005E9CC9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD592542E6D21CB005E9CC9 /* Moya */; };
 		9FD592572E6D21CB005E9CC9 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD592562E6D21CB005E9CC9 /* ReactiveMoya */; };
@@ -54,6 +55,7 @@
 				9F8C57842E5AC26B001803F2 /* RxSwift in Frameworks */,
 				9F8C57822E5AC26B001803F2 /* RxRelay in Frameworks */,
 				9FD592572E6D21CB005E9CC9 /* ReactiveMoya in Frameworks */,
+				9FA7F69F2E767D9A000BEF34 /* ObjectMapper in Frameworks */,
 				9FD592592E6D21CB005E9CC9 /* RxMoya in Frameworks */,
 				9FD592552E6D21CB005E9CC9 /* Moya in Frameworks */,
 				9F8C57642E5AC172001803F2 /* PinLayout in Frameworks */,
@@ -108,6 +110,7 @@
 				9FD592542E6D21CB005E9CC9 /* Moya */,
 				9FD592562E6D21CB005E9CC9 /* ReactiveMoya */,
 				9FD592582E6D21CB005E9CC9 /* RxMoya */,
+				9FA7F69E2E767D9A000BEF34 /* ObjectMapper */,
 			);
 			productName = reactorKit2;
 			productReference = 9F8C573E2E5AC091001803F2 /* reactorKit2.app */;
@@ -142,6 +145,7 @@
 				9F8C577B2E5AC249001803F2 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				9F8C577E2E5AC26B001803F2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				9FD592512E6D21CB005E9CC9 /* XCRemoteSwiftPackageReference "Moya" */,
+				9FA7F69D2E767D9A000BEF34 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9F8C573F2E5AC091001803F2 /* Products */;
@@ -393,6 +397,14 @@
 				minimumVersion = 6.9.0;
 			};
 		};
+		9FA7F69D2E767D9A000BEF34 /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
 		9FD592512E6D21CB005E9CC9 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -428,6 +440,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F8C577E2E5AC26B001803F2 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		9FA7F69E2E767D9A000BEF34 /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9FA7F69D2E767D9A000BEF34 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
 		};
 		9FD592522E6D21CB005E9CC9 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

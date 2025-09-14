@@ -8,21 +8,23 @@
 import Moya
 import RxMoya
 import RxSwift
+import ObjectMapper
 
 import Foundation
 
 protocol WeatherRepository { //Interface
-  func fetchWeather(cityName: String) -> Single<Double?>
+  func fetchWeather(cityName: String) -> Single<Weather?>
 }
 
 class WeatherRepositoryImpl: WeatherRepository { //Implement
   let provider = MoyaProvider<WeatherAPI>()
   
-  func fetchWeather(cityName: String) -> Single<Double?> {
+  func fetchWeather(cityName: String) -> Single<Weather?> {
    return provider.rx.request(.weather(cityName: cityName))
+      //.map(Weather.self) //수동
       .mapJSON()
-      .map { $0 as? [String: Any]}
-      .map { $0?["main"] as? [String: Any]}
-      .map { $0?["temp"] as? Double}
+      .map { json in
+        return Mapper<Weather>().map(JSONObject: json)
+      }
   }
 }

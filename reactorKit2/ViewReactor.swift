@@ -18,7 +18,7 @@ class ViewReactor: Reactor {
   // represent state changes
   enum Mutation {
     case setIsInitialized(Bool)
-    case setTemp(Double?)
+    case setTemp(Weather?)
   }
 
   // represents the current view state
@@ -55,9 +55,17 @@ class ViewReactor: Reactor {
     case let .setIsInitialized(isInitialized):
       newState.isintialized = isInitialized
       
-    case let .setTemp(temp):
-      guard let temp = temp else { break }
-      newState.temp = String(format: "%.1f", temp)
+    case let .setTemp(weather):
+      if let weather = weather {
+        newState.temp = "\(Int(weather.main.temp))°C" 
+      }
+      
+//      print(temp?.name)
+//      print(temp?.weatherArray.first?.id)
+      
+//      print(temp.wind.speed)
+//      print(temp.main.temp)
+//      print(temp.weatherDataArray.first?.id)
     }
     
     return newState

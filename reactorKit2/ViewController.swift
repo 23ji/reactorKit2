@@ -16,12 +16,23 @@ class ViewController: UIViewController, View {
   
   var disposeBag = DisposeBag()
   
+  let label = UILabel()
+
   
   // MARK: View Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = .white
+    
+    label.text = "ddd"
+    label.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(label)
+    
+    NSLayoutConstraint.activate([
+      label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+      label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+    ])
   }
   
   
@@ -32,7 +43,8 @@ class ViewController: UIViewController, View {
     
     reactor.state.map { $0.temp }
       .subscribe(onNext: { temp in
-          print(temp)
+        self.label.text = temp
+        print(temp)
       })
       .disposed(by: self.disposeBag)
     
